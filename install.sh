@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # muse-cli installer: CLI (from PyPI, via uv) + agent skill. No browser needed afterwards.
-# Usage: curl -fsSL https://raw.githubusercontent.com/nikships/muse-cli/main/install.sh | bash
+# Usage: curl -fsSL https://raw.githubusercontent.com/toxicwind/muse-cli/main/install.sh | bash
 set -u
 
-REPO_URL="${MUSE_CLI_REPO:-https://github.com/nikships/muse-cli.git}"
-RAW_URL="${MUSE_CLI_RAW:-https://raw.githubusercontent.com/nikships/muse-cli/main}"
+REPO_URL="${MUSE_CLI_REPO:-https://github.com/toxicwind/muse-cli.git}"
+RAW_URL="${MUSE_CLI_RAW:-https://raw.githubusercontent.com/toxicwind/muse-cli/main}"
 SKILL_DIR="${MUSE_CLI_SKILLS:-$HOME/.agents/skills}"
 BIN_NAME="muse-cli"   # 'muse' clashes with Muse Code, don't use it
 LEGACY_BIN="${MUSE_CLI_BIN:-$HOME/bin}/$BIN_NAME"
@@ -94,7 +94,7 @@ echo "      hatch_sess=VALUE; other_name=other_value"
 echo "    chmod 600 ~/.config/muse-cli/cookies.txt"
 echo "    $BIN_NAME status"
 echo
-echo "Full write-up: https://github.com/nikships/muse-cli#log-in-once"
+echo "Full write-up: https://github.com/toxicwind/muse-cli#log-in-once"
 echo
 echo "Updates: in a terminal, $BIN_NAME notices a newer PyPI release once a day."
 echo "Upgrade with: $BIN_NAME update"

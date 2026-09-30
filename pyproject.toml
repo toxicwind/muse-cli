@@ -59,12 +59,12 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/nikships/muse-cli"
-Documentation = "https://github.com/nikships/muse-cli#readme"
-Repository = "https://github.com/nikships/muse-cli"
-Issues = "https://github.com/nikships/muse-cli/issues"
-Changelog = "https://github.com/nikships/muse-cli/releases"
-"Protocol Notes" = "https://github.com/nikships/muse-cli/blob/main/docs/PROTOCOL.md"
+Homepage = "https://github.com/toxicwind/muse-cli"
+Documentation = "https://github.com/toxicwind/muse-cli#readme"
+Repository = "https://github.com/toxicwind/muse-cli"
+Issues = "https://github.com/toxicwind/muse-cli/issues"
+Changelog = "https://github.com/toxicwind/muse-cli/releases"
+"Protocol Notes" = "https://github.com/toxicwind/muse-cli/blob/main/docs/PROTOCOL.md"
 
 [project.scripts]
 muse-cli = "muse_cli.cli:main"

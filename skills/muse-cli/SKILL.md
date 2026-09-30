@@ -16,7 +16,7 @@ prints JSON.
 ## 1. Install
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/nikships/muse-cli/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/toxicwind/muse-cli/main/install.sh | bash
 ```
 
 This installs the CLI from PyPI with `uv tool install muse-cli` (its own
