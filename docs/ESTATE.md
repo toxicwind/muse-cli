@@ -26,6 +26,8 @@ on stars (27), forks (7), recency (pushed 2026-09-27), and the shipped
 
 ## Open work
 
-- [ ] Port the TLS-verification fix (`kleprevost/muse-mcp#1` equivalent)
-      for the gateway WebSocket (`nikships/muse-cli#1` upstream).
+- [x] TLS-verification for the gateway WebSocket (`nikships/muse-cli#1`):
+      already fixed upstream (`9406cbb`, released in 0.3.2) and inherited by
+      this fork — no port needed. Regression-guarded by
+      `tests/test_smoke.py::test_gateway_tls_verify_enabled`.
 - [ ] Evaluate `kleprevost/muse-mcp` as a companion MCP surface.

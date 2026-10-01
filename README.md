@@ -7,13 +7,19 @@ Talk to your personal muse.ai AI agent from the terminal.
 [![PyPI](https://img.shields.io/pypi/v/muse-cli?style=for-the-badge)](https://pypi.org/project/muse-cli/)
 [![Python](https://img.shields.io/pypi/pyversions/muse-cli?style=for-the-badge)](https://pypi.org/project/muse-cli/)
 [![Downloads](https://img.shields.io/pepy/dt/muse-cli?style=for-the-badge)](https://pepy.tech/project/muse-cli)
-[![License: MIT](https://img.shields.io/github/license/nikships/muse-cli?style=for-the-badge)](https://github.com/nikships/muse-cli/blob/main/LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/nikships/muse-cli?style=for-the-badge)](https://github.com/nikships/muse-cli/stargazers)
+[![License: MIT](https://img.shields.io/github/license/toxicwind/muse-cli?style=for-the-badge)](https://github.com/toxicwind/muse-cli/blob/main/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/toxicwind/muse-cli?style=for-the-badge)](https://github.com/toxicwind/muse-cli/stargazers)
 [![Website](https://img.shields.io/badge/website-live-3fb950?style=for-the-badge)](https://muse-cli-site.web.app)
 
-![muse-cli hero](https://raw.githubusercontent.com/nikships/muse-cli/main/assets/hero.webp)
+![muse-cli hero](https://raw.githubusercontent.com/toxicwind/muse-cli/main/assets/hero.webp)
 
 </div>
+
+> **Fork:** this is [`toxicwind/muse-cli`](https://github.com/toxicwind/muse-cli),
+> the canonical fork for the hatch/ipnext agent estate. Upstream is
+> [`nikships/muse-cli`](https://github.com/nikships/muse-cli); its history is
+> preserved. Estate additions: the [hatch-agent profile](profiles/hatch-agent.md)
+> (non-interactive, JSON-first setup for agents) and [estate bridge notes](docs/ESTATE.md).
 
 ## What is this?
 
@@ -30,7 +36,7 @@ Prompt a coding agent, it activates the muse-cli skill and runs read-only
 commands for you. Live session below: a Droid worker runs `muse-cli status`
 and `muse-cli goals`, then reports back.
 
-![Droid agent using muse-cli to check status and goals](https://raw.githubusercontent.com/nikships/muse-cli/main/assets/demo-agent.png)
+![Droid agent using muse-cli to check status and goals](https://raw.githubusercontent.com/toxicwind/muse-cli/main/assets/demo-agent.png)
 
 ## Quick Start
 
@@ -44,7 +50,7 @@ Want the agent skill too? The installer sets up the CLI and copies the skill
 to `~/.agents/skills/muse-cli`:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/nikships/muse-cli/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/toxicwind/muse-cli/main/install.sh | bash
 ```
 
 Upgrade with `muse-cli update`. In a terminal it also checks PyPI once a day and, when a newer release exists, prints that command on stderr. It does not upgrade itself. Set `MUSE_NO_UPDATE_CHECK=1` to silence the notice. The check stays quiet when output is piped or `CI` is set. Remove with `uv tool uninstall muse-cli`.
@@ -191,11 +197,11 @@ muse-cli send "what's on my calendar today?" | jq -r .reply.text
 
 ## How it works
 
-![how muse-cli connects](https://raw.githubusercontent.com/nikships/muse-cli/main/assets/how-it-works.webp)
+![how muse-cli connects](https://raw.githubusercontent.com/toxicwind/muse-cli/main/assets/how-it-works.webp)
 
-![muse-cli connection flow](https://raw.githubusercontent.com/nikships/muse-cli/main/assets/flow.webp)
+![muse-cli connection flow](https://raw.githubusercontent.com/toxicwind/muse-cli/main/assets/flow.webp)
 
-See [docs/PROTOCOL.md](https://github.com/nikships/muse-cli/blob/main/docs/PROTOCOL.md)
+See [docs/PROTOCOL.md](https://github.com/toxicwind/muse-cli/blob/main/docs/PROTOCOL.md)
 for the full protocol notes, including the method table and the server quirks
 found during reverse engineering.
 
@@ -203,15 +209,17 @@ found during reverse engineering.
 
 | Resource | Description |
 |----------|-------------|
-| [skills/muse-cli/SKILL.md](https://github.com/nikships/muse-cli/blob/main/skills/muse-cli/SKILL.md) | Agent skill: install check, auth setup, command reference |
-| [docs/PROTOCOL.md](https://github.com/nikships/muse-cli/blob/main/docs/PROTOCOL.md) | Gateway protocol reference: auth chain, Noise transport, framing, method quirks |
-| [routes.json](https://github.com/nikships/muse-cli/blob/main/src/muse_cli/routes.json) | All 258 gateway methods with paths and services |
+| [skills/muse-cli/SKILL.md](https://github.com/toxicwind/muse-cli/blob/main/skills/muse-cli/SKILL.md) | Agent skill: install check, auth setup, command reference |
+| [docs/PROTOCOL.md](https://github.com/toxicwind/muse-cli/blob/main/docs/PROTOCOL.md) | Gateway protocol reference: auth chain, Noise transport, framing, method quirks |
+| [routes.json](https://github.com/toxicwind/muse-cli/blob/main/src/muse_cli/routes.json) | All 258 gateway methods with paths and services |
+| [profiles/hatch-agent.md](https://github.com/toxicwind/muse-cli/blob/main/profiles/hatch-agent.md) | Agent profile: non-interactive hatch/ipnext setup, usage contract, security notes |
+| [docs/ESTATE.md](https://github.com/toxicwind/muse-cli/blob/main/docs/ESTATE.md) | Fork notes: protocol cross-reference, harvest provenance |
 | `muse-cli raw --help` | Escape hatch for calling any gateway method directly |
 
 ## Development
 
 ```bash
-git clone https://github.com/nikships/muse-cli.git
+git clone https://github.com/toxicwind/muse-cli.git
 cd muse-cli
 uv run muse-cli --help
 ```
@@ -248,18 +256,18 @@ pyproject.toml
 Issues and PRs welcome. If the protocol drifts, the most useful contribution
 is a note of which method broke and the new server error text.
 
-<a href="https://github.com/nikships/muse-cli/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=nikships/muse-cli" />
+<a href="https://github.com/toxicwind/muse-cli/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=toxicwind/muse-cli" />
 </a>
 
 ## License
 
-MIT. See [LICENSE](https://github.com/nikships/muse-cli/blob/main/LICENSE).
+MIT. See [LICENSE](https://github.com/toxicwind/muse-cli/blob/main/LICENSE).
 
 ---
 
 <div align="center">
 
-[![Star History Chart](https://api.star-history.com/svg?repos=nikships/muse-cli&type=Date)](https://star-history.com/#nikships/muse-cli&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=toxicwind/muse-cli&type=Date)](https://star-history.com/#toxicwind/muse-cli&Date)
 
 </div>

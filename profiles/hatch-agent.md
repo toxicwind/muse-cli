@@ -45,7 +45,9 @@ command -v muse-cli && muse-cli --help >/dev/null && echo cli-ok
 
 ## Security notes
 
-- Upstream issue `nikships/muse-cli#1`: the gateway WebSocket did not verify
-  TLS certificates. Treat the transport as untrusted until that fix lands in
-  this fork; prefer running behind a verifying proxy for sensitive traffic.
+- Upstream issue `nikships/muse-cli#1` (the gateway WebSocket did not verify
+  TLS certificates) is fixed in this fork: `gateway.py` connects with
+  `verify=True` (upstream commit `9406cbb`, released in 0.3.2, inherited here
+  with full history; guarded by `tests/test_smoke.py`). Only pre-0.3.2
+  installs should be treated as untrusted on the wire.
 - `cookies.txt` is a bearer credential: 0600, never logged, never committed.
