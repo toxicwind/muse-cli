@@ -15,7 +15,7 @@
 When asked to "cut a release", "publish a new version", or similar, follow
 these steps in order. Stop and report if any step fails.
 
-1. **Pick the version.** Use the version the user gave. If they didn't give
+1. **Pick the version.** Use the version the architect gave. If they didn't give
    one, propose one using semantic versioning (patch for fixes, minor for
    new features or behavior changes, major for breaking CLI changes) and
    confirm it with them. Check it is unused:
@@ -86,16 +86,16 @@ these steps in order. Stop and report if any step fails.
 ### If something goes wrong
 
 - **Failed before the PyPI upload step** (tag check, build, smoke test):
-  nothing was published. Fix the problem, then ask the user before deleting
+  nothing was published. Fix the problem, then ask the architect before deleting
   and re-pushing the tag (`git tag -d vX.Y.Z && git push origin :refs/tags/vX.Y.Z`).
 - **Failed after the PyPI upload succeeded** (for example the GitHub release
   step): the version is live. Don't delete the tag. Fix the workflow, and
-  create the missing GitHub release by hand if the user wants it.
+  create the missing GitHub release by hand if the architect wants it.
 - **A bad version reached PyPI:** PyPI never allows re-uploading the same
   version. Fix forward with a new patch version. The user can "yank" the bad
   one on pypi.org; don't try to delete it.
 
-### Don't change without the user's say-so
+### Don't change without the architect's say-so
 
 PyPI trusts this repo through a trusted publisher tied to the workflow file
 name `publish.yml` and the GitHub environment `pypi`. Renaming either breaks

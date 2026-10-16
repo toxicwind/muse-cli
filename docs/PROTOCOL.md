@@ -74,7 +74,7 @@ chat / feed / goals / ideas / sessions / ...
   delete: `{method: "/api/session/<op>", session_id}`.
 - `api.idea-cards.execute`: `{ideaCardId, mode: "full"}` plus path param.
 - POSTs to muse.ai need browser `Sec-Fetch-*` headers or they return 403.
-- `auth export` reads cookies from the user's own Google Chrome through
+- `auth export` reads cookies from the architect's own Google Chrome through
   agent-browser `--auto-connect`. Chrome 144+ shares that profile only after
   remote debugging is enabled at `chrome://inspect/#remote-debugging`. The
   export follows the active tab, so a muse.ai tab has to be focused first,

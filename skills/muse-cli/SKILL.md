@@ -32,9 +32,9 @@ muse-cli --help >/dev/null && echo cli-ok   # proves the install + deps resolve
 
 ## 2. Auth
 
-The CLI stores the user's muse.ai browser login at
+The CLI stores the architect's muse.ai browser login at
 `~/.config/muse-cli/cookies.txt` (mode 0600). Chrome hides those cookies
-until remote debugging is on. Walk the user through the steps below and wait
+until remote debugging is on. Walk the architect through the steps below and wait
 for them. Do not run `muse-cli auth export` before they say the Chrome
 switch is on and a logged-in muse.ai tab is open.
 
@@ -59,7 +59,7 @@ command -v agent-browser  # must print a path
 ```
 
 `EACCES` from `npm i -g` means npm cannot write its global bin directory.
-Stop and tell the user. They fix it with an npm prefix they own
+Stop and tell the architect. They fix it with an npm prefix they own
 (https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally)
 or by installing with the same rights they use for other global npm tools.
 Do not sudo unless they tell you to.
@@ -70,7 +70,7 @@ would rather not install Node.
 
 ### 2b. Chrome, then export
 
-Tell the user to do all of this in the Google Chrome window they already
+Tell the architect to do all of this in the Google Chrome window they already
 use for muse.ai. Needs Chrome 144 or newer. Wait until they confirm:
 
 1. Address bar: `chrome://inspect/#remote-debugging`
@@ -106,7 +106,7 @@ in a loop:
 
 ### 2c. Copy cookies by hand
 
-Use this when Node is unavailable, or the user does not want remote debugging on.
+Use this when Node is unavailable, or the architect does not want remote debugging on.
 
 1. They are logged in at https://muse.ai/ in Chrome.
 2. DevTools (F12) → Application → Cookies → `https://muse.ai`.
@@ -145,7 +145,7 @@ muse-cli unread
 muse-cli seen <thread-id>
 ```
 
-Management (visible side effects, confirm with the user first when destructive):
+Management (visible side effects, confirm with the architect first when destructive):
 
 ```bash
 muse-cli feed-react <unit-id> love
