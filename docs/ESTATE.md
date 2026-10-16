@@ -17,7 +17,7 @@ The gateway protocol here matches the estate's own
 
 ## Harvest provenance
 
-Collected 2026-09-30 into `/home/toxic/sovereign/hatch/metaaivm-harvest/`:
+Collected 2026-09-30 into `/home/toxic/estate-scripts/hatch/metaaivm-harvest/`:
 GitHub-wide `metaaivm` search — 0 repos, 300 code hits (99 unique repos),
 3 issues, 4 PRs. This repo was selected over `kleprevost/muse-mcp`
 (MCP for Muse agents) and `giauphan/toolcase-gateway` (Rust LLM proxy)
