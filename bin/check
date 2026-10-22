@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# muse-cli check gate — fast no-network self-test with PASS/FAIL exit.
+# The repo ships a no-creds/no-network pytest smoke suite (tests/test_smoke.py)
+# that guards the gateway TLS contract + config/routes — the gate is its exit.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+
+if python3 -m pytest tests/ -q >/dev/null 2>&1; then
+  echo "MUSE-CLI CHECK: PASS (pytest)"
+  exit 0
+fi
+echo "MUSE-CLI CHECK: FAIL"
+exit 1

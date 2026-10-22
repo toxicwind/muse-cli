@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# muse-cli rig — primary operation (the muse.ai terminal client).
+# Self-sufficient: sets up an isolated venv via uv, installs the package
+# editable, then surfaces the CLI help / main entry. Chat ops run on-demand:
+# `uv run muse-cli chat ...` (or `.venv/bin/muse-cli`).
+set -euo pipefail
+cd "$(dirname "$0")/.."
+
+if [ ! -x .venv/bin/muse-cli ]; then
+  echo "muse-cli: creating isolated venv + editable install (first run)..."
+  uv venv --python 3 >/dev/null 2>&1
+  uv pip install -q -e . 2>&1 | tail -3 || true
+fi
+
+if [ -x .venv/bin/muse-cli ]; then
+  .venv/bin/muse-cli --help | head -30
+else
+  echo "muse-cli install failed — check deps / network. Run: uv sync"
+  exit 1
+fi
