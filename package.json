@@ -1,0 +1,31 @@
+{
+  "name": "muse-cli",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Talk to your personal muse.ai AI agent from the terminal.",
+  "type": "module",
+  "bin": {
+    "muse-cli": "./bin/muse-cli.ts"
+  },
+  "scripts": {
+    "dev": "bun --hot run bin/muse-cli.ts",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "lint": "biome check .",
+    "fmt": "biome format --write .",
+    "build": "bun build bin/muse-cli.ts --target=bun --outdir=dist"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/bun": "latest",
+    "typescript": "^5.5.4"
+  },
+  "peerDependencies": {
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.32.0",
+    "commander": "^12.1.0",
+    "zod": "^3.23.8"
+  }
+}
