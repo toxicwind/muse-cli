@@ -17,7 +17,7 @@ Auto-backfilled from git history 2026-11-02 (real commits only).
 
 ## 2026-09-30
 - Maximalize toxicwind fork: repoint README/site to fork, fix stale TLS notes, add smoke tests (628fa52)
-- First-class hatch/ipnext agent profile: profiles/hatch-agent.md, docs/ESTATE.md, repoint to toxicwind fork (521b49e)
+- First-class hatch/ipnext agent profile: profiles/hatch-agent.md, docs/Pens.md, repoint to toxicwind fork (521b49e)
 
 ## 2026-09-27
 - Redesign site per redesign-existing-projects skill (bcd5ee1)
