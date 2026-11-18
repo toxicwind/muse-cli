@@ -1,0 +1,7 @@
+[
+  "tests/test_smoke.py::test_gateway_tls_verify_enabled",
+  "tests/test_smoke.py::test_readme_install_points_at_fork",
+  "tests/test_smoke.py::test_routes_json_method_count",
+  "tests/test_smoke.py::test_site_links_point_at_fork",
+  "tests/test_smoke.py::test_version_sane"
+]
